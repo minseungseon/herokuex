@@ -1,7 +1,12 @@
 ### Django ### 
-*.log 
-*.pot 
-*.pyc 
+*.py[cod]
+
+.Python
+myvenv/
+
 __pycache__/ 
-local_settings.py 
-db.sqlite3 media
+.DS_Store
+
+db.sqlite3
+
+.vscode/
