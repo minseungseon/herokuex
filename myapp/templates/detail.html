@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<a href = "{% url 'delete' blogs.id %}">삭제하기</a>
+<a href = "{% url 'edit' blogs.id %}">수정하기</a>
+
+
+{{blogs.title}}
+{{blogs.pub_date}}
+{{blogs.body}}
+
+{% endblock %}
+

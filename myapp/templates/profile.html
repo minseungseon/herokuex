@@ -1,0 +1,11 @@
+<!-- base.html을 가져오겠다고 말해주기 -->
+{% extends 'base.html' %}
+
+<!-- base.html 과 다른 부분에는 앞뒤로 block 표시 해주기 -->
+{%block contents%}
+
+<h1>안녕하세요! 저는 선민승입니다.</h1>
+<a href="{% url 'home' %}">홈으로 가기</a>
+<a href="{% url 'myphoto' %}">내 사진 보기</a>
+
+{% endblock %}

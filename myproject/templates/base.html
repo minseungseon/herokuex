@@ -1,0 +1,20 @@
+<head>
+    <title>멋사 8기 두번째 정기세션 HOME</title>
+    <h1>멋사 8기 두번째 정기세션 HOME</h1>
+    {% block head %}
+    {% endblock head %}
+</head>
+
+<body>
+<hr>
+<div class = "container">
+{% block contents %}
+{% endblock contents%}
+</div>
+</body>
+
+    <footer>
+        <h4><a href="{% url 'profile' %}">나의 정보 보러가기</a></h4>
+        <h4><a href="https://github.com/minseungseon/starting_django">장고 실습 자료 보러가기</a></h4>
+        <h4><a href="https://minseungseon.github.io/">선생님 블로그 보러가기</a></h4>
+    </footer>
