@@ -15,12 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -31,7 +25,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','l-gh@-o9%(x+cb=n)j-vy*w+ovd+@=p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -130,5 +125,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # settings.py # Heroku: Update database configuration from $DATABASE_URL. 
 
-
-
+import dj_databaseurl 
+db_from_env = dj_database_url.config(conn_max_age=500) 
+DATABASES['default'].update(db_from_env)
