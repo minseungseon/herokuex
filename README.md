@@ -7,10 +7,10 @@ hope this document helps you all in every way!
   
 ## 01 필요한 모듈 설치  
 ```
-$pip install django-corse-headers gunicorn psycopg2-binary whitenoise dj-database-url
+$pip install django-cors-headers gunicorn psycopg2-binary whitenoise dj-database-url
 ```
 
-**django-corse-headers** : corse 에러 방지  
+**django-cors-headers** : corse 에러 방지  
 **gunicorn**: 배포를 위한 도구  
 **psycopg2-binary, dj-database-url**: heroku 에서 사용하는 db인, postgresql 을 사용하기 위한 도구   
 **whitenoise**: 정적 파일의 사용을 돕는 미들웨어  
