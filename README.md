@@ -108,4 +108,51 @@ db.sqlite3
 .vscode/
 ```
 
+## 04 헤로쿠 가입 및 CLI 설치  
+1. 헤로쿠에 가입을 해주세요  
+2. Heroku 사용을 위해서 CLI(Command Line Interface)를 설치해주세요!  
+설치 페이지: <https://devcenter.heroku.com/articles/heroku-cli>  
+  
+## 05 git 폴더로 만들고, push 하기  
+>> 앞에서도 언급했듯이, heroku는 git 을 통해 배포가 됩니다!  
+>> 따라서, Heroku 에 무언가를 올리기 위해서는 **무조건 git 저장소**를 폴더에 만들어 줘야겠죠?  
+
+```
+$git init  
+$git add .
+$git commit -m "first commit for deploy"  
+$git remote add origin 레포주소 
+$git push origin master  
+
+```
+**배포 준비 완료!!**  
+  
+## 06 Heroku로 배포하기 
+```
+$heroku login  
+$heroku create 웹사이트이름 
+(그냥 랜덤으로 사이트 이름을 만들어줍니당.)  
+```
+  
+**두근두근 배포배포** 
+```
+$git push heroku master 
+``` 
+
+## 06 배포된 사이트 migration 해주기  
+>> 배포가 끝이 아니랍니다! 저희의 파일들을 완전히 'attach' 시켜주기 위해서, migrate를 해줍니다!  
+>> 또한, 배포를 하면서 db가 초기화 되었기 때문에, superuser도 만들어 주어야 합니다.  
+```
+$heroku run python manage.py migrate  
+```  
+
+```
+$heroku run python manage.py createsuperuser
+```
+
+모두 되었다면, 잘 배포가 되었는지 확인해볼까요?  
+```
+$heroku open
+```
+
 
