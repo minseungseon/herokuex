@@ -1,15 +1,20 @@
-# note for heroku deploy session 
-
+# **NOTE** for heroku deploy session 
+안녕하세요!! 선민승입니다. 5/29일 진행된 멋쟁이 사자처럼의 deploy session 실습 참고자료입니다!  
+여러분이 만드신 멋진 django website를 배포하는 시간을 가져보겠습니다!  
+This is a quick instruction note you can refer to, when you are using Heroku to deploy your web project!  
+privately created for personal school gathering sesion, but totally okay to use my note as a reference.  
+hope this document helps you all in every way!  
+  
 ## 01 필요한 모듈 설치  
 ```
 $pip install django-corse-headers gunicorn psycopg2-binary whitenoise dj-database-url
 ```
 
-django-corse-headers : corse 에러 방지
-gunicorn: 배포를 위한 도구
-psycopg2-binary, dj-database-url: heroku 에서 사용하는 db인, postgresql 을 사용하기 위한 도구 
-whitenoise: 정적 파일의 사용을 돕는 미들웨어
-
+**django-corse-headers** : corse 에러 방지  
+**gunicorn**: 배포를 위한 도구  
+**psycopg2-binary, dj-database-url**: heroku 에서 사용하는 db인, postgresql 을 사용하기 위한 도구   
+**whitenoise**: 정적 파일의 사용을 돕는 미들웨어  
+  
   
 ```
 $pip freeze > requirements.txt
@@ -79,7 +84,8 @@ $python --version
 
 -버전 확인후에 runtime.txt 파일에 다음의 줄 추가  
 ```python
-#runtime.txt  
+#runtime.txt
+  
 python-3.7.7  
 ```
 -.gitignore 파일 만들기  
@@ -95,6 +101,7 @@ $touch .gitignore
 
 ```python
 #.gitignore 
+  
 *.py[cod]
 
 .Python
@@ -118,12 +125,15 @@ db.sqlite3
 >> 따라서, Heroku 에 무언가를 올리기 위해서는 **무조건 git 저장소**를 폴더에 만들어 줘야겠죠?  
 
 ```
-$git init  
-$git add .
-$git commit -m "first commit for deploy"  
-$git remote add origin 레포주소 
-$git push origin master  
+$git init
 
+$git add .
+
+$git commit -m "first commit for deploy"  
+
+$git remote add origin 레포주소 
+
+$git push origin master  
 ```
 **배포 준비 완료!!**  
   
